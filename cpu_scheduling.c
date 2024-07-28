@@ -164,7 +164,7 @@ int main() {
     
     struct process p[10];
     
-    printf("Enter the process id, burst time, and priority of each process: \n");
+    printf("Enter the burst time and priority of each process: \n");
     printf("Process   Burst Time   Priority\n");
     
     for (int i = 0; i < no_processes; i++) {
