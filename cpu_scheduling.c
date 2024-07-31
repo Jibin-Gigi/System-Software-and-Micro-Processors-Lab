@@ -30,13 +30,8 @@ void gantt_chart(struct process p[], int total_turn_around_time, int total_waiti
 		printf("   %d", p[i].turn_around_time);
 	}
 	printf("\n");
+	calculation( p, no_processes, total_turn_around_time, total_waiting_time);
 	
-	printf("Process	| Waiting Time | Turn Around Time\n");
-	for(int i = 0; i<no_processes; i++ ){
-		printf("P%d \t\t %d \t\t %d\n",p[i].process_id,p[i].waiting_time,p[i].turn_around_time  );
-	}
-	printf("Total turn around time = %d\n", total_turn_around_time);
-	printf("Total waiting time = %d\n", total_waiting_time);
 }
 
 void round_robin_gantt_chart(struct process a,struct process p[], int cycle_time[], int total_waiting_time,int no_processes, int completed, int counter){
