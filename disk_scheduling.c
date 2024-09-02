@@ -28,11 +28,11 @@ void desc_sort(int array[], int size) {
     }
 }
 
-void print_arrays(int array[], int size) {
-    for (int i = 0; i < size; i++) {
+void print_arrays(int array[], int size){
+	for (int i = 0; i < size; i++) {
         printf("%d ", array[i]);
     }
-    printf("\n");
+    printf("\n\n");
 }
 
 void fcfs_scheduling(int head, int string[], int n) {
@@ -65,8 +65,7 @@ void scan_scheduling(int head, int string[], int n, int max_range) {
     for (int i = 0; i < n; i++) {
         if (head > string[i]) {
             left_array[lsize++] = string[i];
-        }
-	else {
+        } else {
             right_array[rsize++] = string[i];
         }
     }
@@ -82,23 +81,23 @@ void scan_scheduling(int head, int string[], int n, int max_range) {
         asc_sort(right_array, rsize);
         desc_sort(left_array, lsize);
 
-        printf("Right Array: ");
-        print_arrays(right_array, rsize);
-        printf("Left Array: ");
-        print_arrays(left_array, lsize);
+		printf("Right Array: ");
+		print_arrays(right_array, rsize);
+		printf("Left Array: ");
+		print_arrays(left_array, lsize);
 
         for (int i = 0; i < rsize; i++) queue[qsize++] = right_array[i];
         queue[qsize++] = max_range;
         for (int i = 0; i < lsize; i++) queue[qsize++] = left_array[i];
-    }
-    else {
+    } 
+	else {
         asc_sort(right_array, rsize);
         desc_sort(left_array, lsize);
 
-        printf("Right Array: ");
-        print_arrays(right_array, rsize);
-        printf("Left Array: ");
-        print_arrays(left_array, lsize);
+		printf("Right Array: ");
+		print_arrays(right_array, rsize);
+		printf("Left Array: ");
+		print_arrays(left_array, lsize);
 
         for (int i = 0; i < lsize; i++) queue[qsize++] = left_array[i];
         queue[qsize++] = 0;
@@ -129,8 +128,7 @@ void c_scan_scheduling(int head, int string[], int n, int max_range) {
     for (int i = 0; i < n; i++) {
         if (head > string[i]) {
             left_array[lsize++] = string[i];
-        }
-	else {
+        } else {
             right_array[rsize++] = string[i];
         }
     }
@@ -146,24 +144,25 @@ void c_scan_scheduling(int head, int string[], int n, int max_range) {
         asc_sort(right_array, rsize);
         asc_sort(left_array, lsize);
 
-        printf("Right Array: ");
-        print_arrays(right_array, rsize);
-        printf("Left Array: ");
-        print_arrays(left_array, lsize);
+		printf("Right Array: ");
+		print_arrays(right_array, rsize);
+		printf("Left Array: ");
+		print_arrays(left_array, lsize);
 
         for (int i = 0; i < rsize; i++) queue[qsize++] = right_array[i];
         queue[qsize++] = max_range;
         queue[qsize++] = 0;
         for (int i = 0; i < lsize; i++) queue[qsize++] = left_array[i];
     } 
-    else {
+	
+	else {
         desc_sort(right_array, rsize);
         desc_sort(left_array, lsize);
 
-        printf("Right Array: ");
-        print_arrays(right_array, rsize);
-        printf("Left Array: ");
-        print_arrays(left_array, lsize);
+		printf("Right Array: ");
+		print_arrays(right_array, rsize);
+		printf("Left Array: ");
+		print_arrays(left_array, lsize);
 
         for (int i = 0; i < lsize; i++) queue[qsize++] = left_array[i];
         queue[qsize++] = 0;
@@ -184,21 +183,20 @@ void c_scan_scheduling(int head, int string[], int n, int max_range) {
     printf("---------------------------------------------------------\n");
 }
 
-void main() {
+int main() {
     int head, no_of_requests, max_range;
-
-    printf("Enter the starting head position: ");
-    scanf("%d", &head);
-    printf("Enter max range: ");
-    scanf("%d", &max_range);
-    printf("Enter no.of requests: ");
-    scanf("%d", &no_of_requests);
-    
-    int string[no_of_requests];
-    printf("Enter the number string: ");
-    for (int i = 0; i < no_of_requests; i++) {
-        scanf("%d", &string[i]);
-    }
+	printf("Enter the starting head position: ");
+	scanf("%d", &head);
+	printf("Enter max range: ");
+	scanf("%d", &max_range);
+	printf("Enter no.of requests: ");
+	scanf("%d", &no_of_requests);
+	
+	int string[no_of_requests];
+	printf("Enter the number string: ");
+	for(int i = 0; i < no_of_requests; i++){
+		scanf("%d", &string[i]);
+	}
 
     int choice;
     do {
@@ -215,7 +213,7 @@ void main() {
                 c_scan_scheduling(head, string, no_of_requests, max_range);
                 break;
             case 4:
-                printf("Program exited");
+				printf("Program exited");
                 break;
             default:
                 printf("Invalid choice, please choose again.\n");
