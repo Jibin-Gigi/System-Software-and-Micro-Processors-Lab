@@ -1,1 +1,1 @@
-# System-Software-and-Micro-Processors-Lab
+# SSMP Lab
