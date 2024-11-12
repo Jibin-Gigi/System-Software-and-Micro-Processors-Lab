@@ -28,12 +28,14 @@ int main() {
 
     int prgm_length = 0x00;
     int txt_size = 0x00;
+
+    //reading first line
     fscanf(intermediate, "%s %s %s %s", address, label, opcode, operand);
     fscanf(length_size, "%x %x", &prgm_length, &txt_size);
 
     int counter = txt_size;
 
-    fprintf(header, "H ^ %s ^ %06X ^ %06X\n", label, strtol(operand, NULL, 16), prgm_length);
+    fprintf(header, "H ^ 00%s ^ %06X ^ %06X\n", label, strtol(operand, NULL, 16), prgm_length);
     fprintf(end, "E ^ %06X\n", strtol(operand, NULL, 16));
     fprintf(text, "T ^ %06X ^ %02X", strtol(operand, NULL, 16), txt_size);
 

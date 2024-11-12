@@ -2,4 +2,4 @@ FIRST   1000
 ALPHA   100c   
 ONE     100f   
 TWO     1012   
-BETA    1015   
+BETA    1015
