@@ -1,4 +1,4 @@
-# System-Software-and-Micro-Processors-Lab
+
 
 ![Screenshot from 2024-09-02 15-39-38](https://github.com/user-attachments/assets/da369524-6289-4569-8658-4c50f3152cce)
 
