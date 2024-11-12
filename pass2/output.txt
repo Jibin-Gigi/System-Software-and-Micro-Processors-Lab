@@ -1,0 +1,9 @@
+**      COPY    START   1000   
+1000    FIRST   LDA     ALPHA   00100c
+1003    **      ADD     ONE     18100f
+1006    **      SUB     TWO     1C1012
+1009    **      STA     BETA    0C1015
+100c    ALPHA   RESW    1       
+100f    ONE     WORD    1       000001
+1012    TWO     WORD    2       000002
+1015    BETA    RESW    1       
